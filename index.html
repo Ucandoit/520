@@ -18,24 +18,41 @@
     }
 
     #letter {
-      margin: 5vh 5vw;
-      height: 70vh;
+      height: 40vh;
+      margin: 10vh 5vw;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 48px;
+    }
+
+    #letter div {
+      background-image:linear-gradient(170deg,#5433FF,#20BDFF,#A5FECB); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color:transparent;
+    }
+
+    .poem {
+      margin-left: 15vw;
+    }
+
+    .line4 {
+      margin-left: 30vw;
+    }
+
+    .line5 {
+      margin-left: 9vw;
     }
 
     #mycanvas {
       width: 100vw;
-      height: 20vh;
+      height: 25vh;
     }
   </style>
   <script src="actions.js"></script>
 </head>
 
 <body>
-  <div id="letter">
-    <div>To: Wanyi</div>
-    <div>blablabla</div>
-    <div>blablablablabla</div>
-  </div>
+  <div id="letter"><div class="poem">野有蔓草，零露漙兮。</div><div class="poem">有美一人，清扬婉兮。</div><div class="poem">邂逅相遇，适我愿兮。</div><div class="line4">感谢遇见，</div><div class="line5">让我努力变成更好的自己。</div></div>
   <canvas id="mycanvas"></canvas>
 </body>
 <script src="jquery.js"></script>

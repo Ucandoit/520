@@ -20,7 +20,7 @@ const color3 = {
 const points1 = [];
 const points2 = [];
 const Actions = [{
-  lifeTime: 60,
+  lifeTime: 90,
   texts: [{
     text: '520',
     hsla: color1
@@ -69,7 +69,7 @@ const Actions = [{
 //   }]
 // },
 {
-  lifeTime: 180,
+  lifeTime: 120,
   texts: [{
     text: 'I',
     hsla: color2

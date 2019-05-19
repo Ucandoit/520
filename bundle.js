@@ -4,17 +4,19 @@
 			var $ele = $(this), str = $ele.html(), progress = 0;
 			$ele.html('');
 			var timer = setInterval(function() {
-				var current = str.substr(progress, 1);
+        var current = str.substr(progress, 1);
 				if (current == '<') {
 					progress = str.indexOf('>', progress) + 1;
 				} else {
 					progress++;
-				}
-				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
+        }
+        $ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
 				if (progress >= str.length) {
-					clearInterval(timer);
+          clearInterval(timer);
+          $ele.html($ele.html().substr(0, $ele.html().length - 1));
+          window.dispatchEvent(new Event('startAnimation'));
 				}
-			}, 100);
+			}, 200);
 		});
 		return this;
 	};
@@ -192,6 +194,7 @@ function load() {
   scene = new Scene(ctx, canvasWidth, canvasHeight);
   scene.build(Actions);
   scene.draw();
+  window.addEventListener('resize', reset);
 }
 
 function reset() {
@@ -210,5 +213,4 @@ function reset() {
   }
 }
 
-window.addEventListener('load', load);
-window.addEventListener('resize', reset);
+window.addEventListener('startAnimation', load);
